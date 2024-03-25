@@ -46,6 +46,15 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
+        .container3 {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
 
         /* Style the form input fields and labels */
         .container div {
@@ -57,6 +66,10 @@
         }
 
         .container2 div {
+            margin-bottom: 1px;
+        }
+
+        .container3 div {
             margin-bottom: 1px;
         }
         
@@ -75,6 +88,12 @@
         }
 
         .container2 label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .container3 label {
             display: block;
             font-weight: bold;
             margin-bottom: 5px;
@@ -111,13 +130,23 @@
             border-radius: 4px;
             border: 1px solid #ccc;
         }
+
+        .container3 input[type="text"],
+        .container3 input[type="tel"],
+        .container3 input[type="email"],
+        .container3 select {
+            width: 95%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
         
 
 
         /* Style the buttons */
         
         
-        .container2 button {
+        .container3 button {
             padding: 10px 20px;
             background-color: #007BFF;
             color: #ffffff;
@@ -127,7 +156,7 @@
             margin-top: 10px;
         }
 
-        .container2 button:hover {
+        .container3 button:hover {
             background-color: #0056b3;
         }
 
@@ -299,7 +328,35 @@
         <div>
         <label for="DiagnosticTests">Diagnostic Tests:</label>
             <input type="text" id="DiagnosticTests" placeholder="Blood tests,X-Ray,CT scan, etc.">
-        </div>  
+        </div>
+    </div>
+    <div class=container3>
+        <h1>Lifestyle and Habits</h1>
+        
+        <div>
+        <label for="TobaccoUse">Tobacco Use:</label>
+            <input type="text" id="TobaccoUse" placeholder="Smoking or chewing tobacco and the frequency">
+        </div>
+        
+        <div>
+        <label for="AlcoholConsumption">Alcohol Consumption:</label>
+            <input type="text" id="AlcoholConsumption" placeholder="Frequency and quantity of alcohol consumption">
+        </div>
+        
+        <div>
+        <label for="RecreationalDrugUse">Recreational Drug Use:</label>
+            <input type="text" id="RecreationalDrugUse" placeholder="Use of any illicit drugs">
+        </div>
+        
+        <div>
+        <label for="DietaryHabits">Dietary Habits:</label>
+            <input type="text" id="DietaryHabits" placeholder="Specific dietary restrictions or requirements">
+        </div>
+        
+        <div>
+        <label for="ExerciseRoutine">Exercise Routine:</label>
+            <input type="text" id="ExerciseRoutine" placeholder="Frequency, type, and duration of physical activity">
+        </div>
         
         <button onclick="generateQRCode()">Generate QR Code</button>
         <button onclick="downloadQRCode()">Download QR Code</button>
@@ -332,15 +389,20 @@
             var Pregnancy = document.getElementById("Pregnancy").value;
             var PhysicalExaminationoutcome = document.getElementById("PhysicalExaminationoutcome").value;
             var DiagnosticTests = document.getElementById("DiagnosticTests").value;
+            var TobaccoUse = document.getElementById("TobaccoUse").value;
+            var AlcoholConsumption = document.getElementById("AlcoholConsumption").value;
+            var RecreationalDrugUse = document.getElementById("RecreationalDrugUse").value;
+            var DietaryHabits = document.getElementById("DietaryHabits").value;
+            var ExerciseRoutine = document.getElementById("ExerciseRoutine").value;
 
 
 
-            if (name === '' || dob === '' || gender === '' || address === '' || number === '' || email === '' || EmergContName === '' || relation === '' || EmergContNo === '' || occupation === '' || insurance === '' || history === '' || prevmedcond === '' || CurrentMedications === '' || Allergies === '' || PreviousSurgeriesHospitalizations === '' || FamilyMedicalHistory === '' || ReasonforVisit === '' || bloodtype === '' || Symptoms === '' || VitalSigns === '' || Pregnancy === '' || PhysicalExaminationoutcome === '' || DiagnosticTests === '') {
+            if (name === '' || dob === '' || gender === '' || address === '' || number === '' || email === '' || EmergContName === '' || relation === '' || EmergContNo === '' || occupation === '' || insurance === '' || history === '' || prevmedcond === '' || CurrentMedications === '' || Allergies === '' || PreviousSurgeriesHospitalizations === '' || FamilyMedicalHistory === '' || ReasonforVisit === '' || bloodtype === '' || Symptoms === '' || VitalSigns === '' || Pregnancy === '' || PhysicalExaminationoutcome === '' || DiagnosticTests === '' || TobaccoUse === '' || AlcoholConsumption === '' || RecreationalDrugUse === '' || DietaryHabits === '' || ExerciseRoutine === '') {
                 alert("Please fill in all fields");
                 return;
             }
 
-            var formData = "Name: " + name + "\nDOB: " + dob + "\nGender: " + gender + "\nAddress: " + address + "\nPhone Number: " + number + "\nEmail:" + email + "\nEmergContName:" + EmergContName + "\nRelation:" + relation + "\nEmergContNo:" + EmergContNo + "\nOccupation:" + occupation + "\nInsurance:" + insurance + "\nPatient History: " + history + "\nPreviousMedicalCondition:" + prevmedcond + "\nCurrentMedications:" + CurrentMedications + "\nAllergies:" + Allergies + "\nPreviousSurgeriesHospitalizations:" + PreviousSurgeriesHospitalizations + "\nFamilyMedicalHistory:" + FamilyMedicalHistory  + "\nReasonforVisit:" + ReasonforVisit + "\nSymptoms:" + Symptoms + "\nbloodtype:" + bloodtype + "\nVitalSigns:" + VitalSigns + "\nPregnancy:" + Pregnancy + "\nPhysicalExaminationoutcome:" + PhysicalExaminationoutcome + "\nDiagnosticTests:" + DiagnosticTests;
+            var formData = "Name: " + name + "\nDOB: " + dob + "\nGender: " + gender + "\nAddress: " + address + "\nPhone Number: " + number + "\nEmail:" + email + "\nEmergContName:" + EmergContName + "\nRelation:" + relation + "\nEmergContNo:" + EmergContNo + "\nOccupation:" + occupation + "\nInsurance:" + insurance + "\nPatient History: " + history + "\nPreviousMedicalCondition:" + prevmedcond + "\nCurrentMedications:" + CurrentMedications + "\nAllergies:" + Allergies + "\nPreviousSurgeriesHospitalizations:" + PreviousSurgeriesHospitalizations + "\nFamilyMedicalHistory:" + FamilyMedicalHistory  + "\nReasonforVisit:" + ReasonforVisit + "\nSymptoms:" + Symptoms + "\nbloodtype:" + bloodtype + "\nVitalSigns:" + VitalSigns + "\nPregnancy:" + Pregnancy + "\nPhysicalExaminationoutcome:" + PhysicalExaminationoutcome + "\nDiagnosticTests:" + DiagnosticTests  + "\nTobaccoUse:" + TobaccoUse + "\nAlcoholConsumption:" + AlcoholConsumption + "\nRecreationalDrugUse:" + RecreationalDrugUse + "\nDietaryHabits:" + DietaryHabits + "\nExerciseRoutine:" + ExerciseRoutine;
 
             var qrcode = new QRCode(document.getElementById("qrcode"), {
                 text: formData,
