@@ -287,162 +287,9 @@
             <input type="text" id="PatientHistory" placeholder="History">
         </div>
 
-    </div>
-    
-    <div class="container1">
-        <h1>Medical History</h1>
-        
-        <div>
-            <label for="prevmedcond">Previous Medical Conditions:</label>
-            <input type="text" id="prevmedcond" placeholder="diabetes, hypertension, asthma, etc.">
-        </div>
-        
-        <div>
-            <label for="CurrentMedications">Current Medications:</label>
-            <input type="text" id="CurrentMedications" placeholder="Over-the-counter drugs, prescription medications, and supplements, etc">
-        </div>
-        
-        <div>
-        <label for="Allergies">Allergies:</label>
-            <input type="text" id="Allergies" placeholder="Allergies">
-        </div>
-        
-        <div>
-        <label for="PreviousSurgeriesHospitalizations">Previous Surgeries or Hospitalizations:</label>
-            <input type="text" id="PreviousSurgeriesHospitalizations" placeholder="Surgeries">
-        </div>
-        
-        <div>
-        <label for="FamilyMedicalHistory">Family Medical History:</label>
-            <input type="text" id="FamilyMedicalHistory" placeholder="Heart disease, cancer, etc.">
-        </div>
-    </div>    
-        
-        <div class=container2>
-            <h1>Current Health Status</h1>
-            <div>
-        <label for="ReasonforVisit">Reason for Visit:</label>
-            <input type="text" id="ReasonforVisit" placeholder="Current Complications">
-        </div>
-        
-        <div>
-            <label for="bloodtype">Blood Type:</label>
-            <select name="bloodtype" id="bloodtype">
-                <option value="">Please select one…</option>
-                <option value="A+">A+</option>
-                <option value="A-">A-</option>
-                <option value="B+">B+</option>
-                <option value="B-">B-</option>
-                <option value="AB+">AB+</option>
-                <option value="AB-">AB-</option>
-                <option value="O+">O+</option>
-                <option value="O-">O-</option>
-            </select>
-        </div>
-        
-        <div>
-        <label for="Symptoms">Symptoms:</label>
-            <input type="text" id="Symptoms" placeholder="Fever, Vomit, etc">
-        </div>
-        
-        <div>
-        <label for="VitalSigns">Vital Signs:</label>
-            <input type="text" id="VitalSigns" placeholder="Blood pressure, heart rate, temperature, respiratory rate, and blood oxygen saturation.">
-        </div>
-        
-        <div>
-        <label for="Pregnancy">Pregnancy:</label>
-            <input type="text" id="Pregnancy" placeholder="Ongoing or chances">
-        </div>
-        
-        <div>
-        <label for="PhysicalExaminationoutcome">Physical Examination Result:</label>
-            <input type="text" id="PhysicalExaminationoutcome" placeholder="Conclusion from Physical Examination">
-        </div>
-        
-        <div>
-        <label for="DiagnosticTests">Diagnostic Tests:</label>
-            <input type="text" id="DiagnosticTests" placeholder="Blood tests,X-Ray,CT scan, etc.">
-        </div>
-    </div>
-    <div class=container3>
-        <h1>Lifestyle and Habits</h1>
-        
-        <div>
-        <label for="TobaccoUse">Tobacco Use:</label>
-            <input type="text" id="TobaccoUse" placeholder="Smoking or chewing tobacco and the frequency">
-        </div>
-        
-        <div>
-        <label for="AlcoholConsumption">Alcohol Consumption:</label>
-            <input type="text" id="AlcoholConsumption" placeholder="Frequency and quantity of alcohol consumption">
-        </div>
-        
-        <div>
-        <label for="RecreationalDrugUse">Recreational Drug Use:</label>
-            <input type="text" id="RecreationalDrugUse" placeholder="Use of any illicit drugs">
-        </div>
-        
-        <div>
-        <label for="DietaryHabits">Dietary Habits:</label>
-            <input type="text" id="DietaryHabits" placeholder="Specific dietary restrictions or requirements">
-        </div>
-        
-        <div>
-        <label for="ExerciseRoutine">Exercise Routine:</label>
-            <input type="text" id="ExerciseRoutine" placeholder="Frequency, type, and duration of physical activity">
-        </div>
-    </div>
-    <div class=container4>
-        <h1>Social and Psychological Factors</h1>
-        
-        <div>
-        <label for="OccupationalHazards">Occupational Hazards:</label>
-            <input type="text" id="OccupationalHazards" placeholder="Exposure to any harmful substances or conditions at work">
-        </div>
-        
-        <div>
-        <label for="StressLevels">Stress Levels:</label>
-            <input type="text" id="StressLevels" placeholder="Any significant stressors in personal or professional life">
-        </div>
-        
-        <div>
-        <label for="MentalHealth">Mental Health:</label>
-            <input type="text" id="MentalHealth" placeholder="Any history of depression, anxiety, or other mental health conditions">
-        </div>
-        
-        <div>
-        <label for="SleepPatterns">Sleep Patterns:</label>
-            <input type="text" id="SleepPatterns" placeholder="Quality and quantity of sleep on a regular basis">
-        </div>
-    </div>
-    
-    <div class=container5>
-        <h1>Additional Information</h1>
-        
-        <div>
-        <label for="HealthcareProviders">Healthcare Providers:</label>
-            <input type="text" id="HealthcareProviders" placeholder="Information about other healthcare providers involved in the patient's care">
-        </div>
-        
-        <div>
-        <label for="AdvanceDirectives">Advance Directives:</label>
-            <input type="text" id="AdvanceDirectives" placeholder="If the patient has a living will or healthcare proxy">
-        </div>
-        
-        <div>
-        <label for="Dementia">Dementia:</label>
-            <input type="text" id="Dementia" placeholder="Is the patient suffering from dementia">
-        </div>
-        
-        <div>
-        <label for="Alzheimers">Alzheimer's:</label>
-            <input type="text" id="Alzheimers" placeholder="Is the patient suffering from Alzheimer's">
-        </div>
-    
         <button onclick="generateQRCode()">Generate QR Code</button>
         <button onclick="downloadQRCode()">Download QR Code</button>
-
+ </div>
         <div id="qrcode"></div>
 
     <script>
@@ -459,39 +306,14 @@
             var occupation = document.getElementById("occupation").value;
             var insurance = document.getElementById("insurance").value;
             var history = document.getElementById("PatientHistory").value;
-            var prevmedcond = document.getElementById("prevmedcond").value;
-            var CurrentMedications = document.getElementById("CurrentMedications").value;
-            var Allergies = document.getElementById("Allergies").value;
-            var PreviousSurgeriesHospitalizations = document.getElementById("PreviousSurgeriesHospitalizations").value;
-            var FamilyMedicalHistory = document.getElementById("FamilyMedicalHistory").value;
-            var ReasonforVisit = document.getElementById("ReasonforVisit").value;
-            var bloodtype = document.getElementById("bloodtype").value;
-            var Symptoms = document.getElementById("Symptoms").value;
-            var VitalSigns = document.getElementById("VitalSigns").value;
-            var Pregnancy = document.getElementById("Pregnancy").value;
-            var PhysicalExaminationoutcome = document.getElementById("PhysicalExaminationoutcome").value;
-            var DiagnosticTests = document.getElementById("DiagnosticTests").value;
-            var TobaccoUse = document.getElementById("TobaccoUse").value;
-            var AlcoholConsumption = document.getElementById("AlcoholConsumption").value;
-            var RecreationalDrugUse = document.getElementById("RecreationalDrugUse").value;
-            var DietaryHabits = document.getElementById("DietaryHabits").value;
-            var ExerciseRoutine = document.getElementById("ExerciseRoutine").value;
-            var OccupationalHazards = document.getElementById("OccupationalHazards").value;
-            var StressLevels = document.getElementById("StressLevels").value;
-            var MentalHealth = document.getElementById("MentalHealth").value;
-            var SleepPatterns = document.getElementById("SleepPatterns").value;
-            var HealthcareProviders = document.getElementById("HealthcareProviders").value;
-            var AdvanceDirectives = document.getElementById("AdvanceDirectives").value;
-            var Dementia = document.getElementById("Dementia").value;
-            var Alzheimers = document.getElementById("Alzheimers").value;
 
-            if (name === '' || dob === '' || gender === '' || address === '' || number === '' || email === '' || EmergContName === '' || relation === '' || EmergContNo === '' || history === '' || occupation === '' || insurance === '' || prevmedcond === '' || CurrentMedications === '' || Allergies === '' || PreviousSurgeriesHospitalizations === '' || FamilyMedicalHistory === '' || ReasonforVisit === '' || bloodtype === '' || Symptoms === '' || VitalSigns === '' || Pregnancy === '' || PhysicalExaminationoutcome === '' || DiagnosticTests === '' || TobaccoUse === '' || AlcoholConsumption === '' || RecreationalDrugUse === '' || DietaryHabits === '' || ExerciseRoutine === '' || OccupationalHazards === '' || StressLevels === '' || MentalHealth === '' || SleepPatterns === '' || HealthcareProviders === '' || AdvanceDirectives === '' || Dementia === '' || Alzheimers === '') {
+
+            if (name === '' || dob === '' || gender === '' || address === '' || number === '' || email === '' || EmergContName === '' || relation === '' || EmergContNo === '' || history === ') {
                 alert("Please fill in all fields");
                 return;
             }
 
-            var formData = "Name: " + name + "\nDOB: " + dob + "\nGender: " + gender + "\nAddress: " + address + "\nPhone Number: " + number + "\nEmail:" + email + "\nEmergContName:" + EmergContName + "\nRelation:" + relation + "\nEmergContNo:" + EmergContNo + "\nPatient History: " + history + "\nOccupation:" + occupation+ "\nInsurance:" + insurance +"\nPreviousMedicalCondition:" + prevmedcond + "\nCurrentMedications:" + CurrentMedications + "\nAllergies:" + Allergies + "\nPreviousSurgeriesHospitalizations:" + PreviousSurgeriesHospitalizations + "\nFamilyMedicalHistory:" + FamilyMedicalHistory + "\nReasonforVisit:" + ReasonforVisit + "\nSymptoms:" + Symptoms + "\nbloodtype:" + bloodtype + "\nVitalSigns:" + VitalSigns + "\nPregnancy:" + Pregnancy + "\nPhysicalExaminationoutcome:" + PhysicalExaminationoutcome + "\nDiagnosticTests:" + DiagnosticTests + "\nTobaccoUse:" + TobaccoUse + "\nAlcoholConsumption:" + AlcoholConsumption + "\nRecreationalDrugUse:" + RecreationalDrugUse + "\nDietaryHabits:" + DietaryHabits + "\nExerciseRoutine:" + ExerciseRoutine + "\nOccupationalHazards:" + OccupationalHazards + "\nStressLevels:"+ StressLevels + "\nMentalHealth:" + MentalHealth + "\nSleepPatterns:" + SleepPatterns + "\nHealthcareProviders:" 
-            + HealthcareProviders + "\nAdvanceDirectives:" + AdvanceDirectives + "\nDementia:" + Dementia + "\nAlzheimers:" + Alzheimers;
+            var formData = "Name: " + name + "\nDOB: " + dob + "\nGender: " + gender + "\nAddress: " + address + "\nPhone Number: " + number + "\nEmail:" + email + "\nEmergContName:" + EmergContName + "\nRelation:" + relation + "\nEmergContNo:" + EmergContNo + "\nPatient History: " + history";
 
             var qrcode = new QRCode(document.getElementById("qrcode"), {
                 text: formData,
