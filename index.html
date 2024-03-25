@@ -33,10 +33,20 @@
         .container div {
             margin-bottom: 1px;
         }
+
+        .container1 div {
+            margin-bottom: 1px;
+        }
         
 
 
         .container label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .container1 label {
             display: block;
             font-weight: bold;
             margin-bottom: 5px;
@@ -53,13 +63,23 @@
             border-radius: 4px;
             border: 1px solid #ccc;
         }
+
+        .container1 input[type="text"],
+        .container1 input[type="tel"],
+        .container1 input[type="email"],
+        .container1 select {
+            width: 95%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
         
 
 
         /* Style the buttons */
         
         
-        .container button {
+        .container1 button {
             padding: 10px 20px;
             background-color: #007BFF;
             color: #ffffff;
@@ -69,7 +89,7 @@
             margin-top: 10px;
         }
 
-        .container button:hover {
+        .container1 button:hover {
             background-color: #0056b3;
         }
 
@@ -165,6 +185,36 @@
             <input type="text" id="PatientHistory" placeholder="History">
         </div>
 
+    </div>
+    
+    <div class="container1">
+        <h1>Medical History</h1>
+        
+        <div>
+            <label for="prevmedcond">Previous Medical Conditions:</label>
+            <input type="text" id="prevmedcond" placeholder="diabetes, hypertension, asthma, etc.">
+        </div>
+        
+        <div>
+            <label for="CurrentMedications">Current Medications:</label>
+            <input type="text" id="CurrentMedications" placeholder="Over-the-counter drugs, prescription medications, and supplements, etc">
+        </div>
+        
+        <div>
+        <label for="Allergies">Allergies:</label>
+            <input type="text" id="Allergies" placeholder="Allergies">
+        </div>
+        
+        <div>
+        <label for="PreviousSurgeriesHospitalizations">Previous Surgeries or Hospitalizations:</label>
+            <input type="text" id="PreviousSurgeriesHospitalizations" placeholder="Surgeries">
+        </div>
+        
+        <div>
+        <label for="FamilyMedicalHistory">Family Medical History:</label>
+            <input type="text" id="FamilyMedicalHistory" placeholder="Heart disease, cancer, etc.">
+        </div>   
+        
         <button onclick="generateQRCode()">Generate QR Code</button>
         <button onclick="downloadQRCode()">Download QR Code</button>
         
@@ -184,14 +234,20 @@
             var occupation = document.getElementById("occupation").value;
             var insurance = document.getElementById("insurance").value;
             var history = document.getElementById("PatientHistory").value;
+            var prevmedcond = document.getElementById("prevmedcond").value;
+            var CurrentMedications = document.getElementById("CurrentMedications").value;
+            var Allergies = document.getElementById("Allergies").value;
+            var PreviousSurgeriesHospitalizations = document.getElementById("PreviousSurgeriesHospitalizations").value;
+            var FamilyMedicalHistory = document.getElementById("FamilyMedicalHistory").value;
 
 
-            if (name === '' || dob === '' || gender === '' || address === '' || number === '' || email === '' || EmergContName === '' || relation === '' || EmergContNo === '' || occupation === '' || insurance === '' || history === '') {
+
+            if (name === '' || dob === '' || gender === '' || address === '' || number === '' || email === '' || EmergContName === '' || relation === '' || EmergContNo === '' || occupation === '' || insurance === '' || history === '' || prevmedcond === '' || CurrentMedications === '' || Allergies === '' || PreviousSurgeriesHospitalizations === '' || FamilyMedicalHistory === '' ) {
                 alert("Please fill in all fields");
                 return;
             }
 
-            var formData = "Name: " + name + "\nDOB: " + dob + "\nGender: " + gender + "\nAddress: " + address + "\nPhone Number: " + number + "\nEmail:" + email + "\nEmergContName:" + EmergContName + "\nRelation:" + relation + "\nEmergContNo:" + EmergContNo + "\nOccupation:" + occupation + "\nInsurance:" + insurance + "\nhistory:" + history"\nPatient History: " + history;
+            var formData = "Name: " + name + "\nDOB: " + dob + "\nGender: " + gender + "\nAddress: " + address + "\nPhone Number: " + number + "\nEmail:" + email + "\nEmergContName:" + EmergContName + "\nRelation:" + relation + "\nEmergContNo:" + EmergContNo + "\nOccupation:" + occupation + "\nInsurance:" + insurance + "\nhistory:" + history"\nPatient History: " + history +"\nPreviousMedicalCondition:" + prevmedcond + "\nCurrentMedications:" + CurrentMedications + "\nAllergies:" + Allergies + "\nPreviousSurgeriesHospitalizations:" + PreviousSurgeriesHospitalizations + "\nFamilyMedicalHistory:" + FamilyMedicalHistory;
 
             var qrcode = new QRCode(document.getElementById("qrcode"), {
                 text: formData,
