@@ -64,6 +64,15 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
+        .container5 {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
 
         /* Style the form input fields and labels */
         .container div {
@@ -83,6 +92,10 @@
         }
 
         .container4 div {
+            margin-bottom: 1px;
+        }
+
+        .container5 div {
             margin-bottom: 1px;
         }
 
@@ -112,6 +125,12 @@
         }
 
         .container4 label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .container5 label {
             display: block;
             font-weight: bold;
             margin-bottom: 5px;
@@ -168,13 +187,23 @@
             border-radius: 4px;
             border: 1px solid #ccc;
         }
+
+        .container5 input[type="text"],
+        .container5 input[type="tel"],
+        .container5 input[type="email"],
+        .container5 select {
+            width: 95%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
         
 
 
         /* Style the buttons */
         
         
-        .container4 button {
+        .container5 button {
             padding: 10px 20px;
             background-color: #007BFF;
             color: #ffffff;
@@ -184,7 +213,7 @@
             margin-top: 10px;
         }
 
-        .container4 button:hover {
+        .container5 button:hover {
             background-color: #0056b3;
         }
 
@@ -408,6 +437,30 @@
         <label for="SleepPatterns">Sleep Patterns:</label>
             <input type="text" id="SleepPatterns" placeholder="Quality and quantity of sleep on a regular basis">
         </div>
+    </div>
+    
+    <div class=container5>
+        <h1>Additional Information</h1>
+        
+        <div>
+        <label for="HealthcareProviders">Healthcare Providers:</label>
+            <input type="text" id="HealthcareProviders" placeholder="Information about other healthcare providers involved in the patient's care">
+        </div>
+        
+        <div>
+        <label for="AdvanceDirectives">Advance Directives:</label>
+            <input type="text" id="AdvanceDirectives" placeholder="If the patient has a living will or healthcare proxy">
+        </div>
+        
+        <div>
+        <label for="Dementia">Dementia:</label>
+            <input type="text" id="Dementia" placeholder="Is the patient suffering from dementia">
+        </div>
+        
+        <div>
+        <label for="Alzheimers">Alzheimer's:</label>
+            <input type="text" id="Alzheimers" placeholder="Is the patient suffering from Alzheimer's">
+        </div>
         
         <button onclick="generateQRCode()">Generate QR Code</button>
         <button onclick="downloadQRCode()">Download QR Code</button>
@@ -449,15 +502,20 @@
             var StressLevels = document.getElementById("StressLevels").value;
             var MentalHealth = document.getElementById("MentalHealth").value;
             var SleepPatterns = document.getElementById("SleepPatterns").value;
+            var HealthcareProviders = document.getElementById("HealthcareProviders").value;
+            var AdvanceDirectives = document.getElementById("AdvanceDirectives").value;
+            var Dementia = document.getElementById("Dementia").value;
+            var Alzheimers = document.getElementById("Alzheimers").value;
 
 
 
-            if (name === '' || dob === '' || gender === '' || address === '' || number === '' || email === '' || EmergContName === '' || relation === '' || EmergContNo === '' || occupation === '' || insurance === '' || history === '' || prevmedcond === '' || CurrentMedications === '' || Allergies === '' || PreviousSurgeriesHospitalizations === '' || FamilyMedicalHistory === '' || ReasonforVisit === '' || bloodtype === '' || Symptoms === '' || VitalSigns === '' || Pregnancy === '' || PhysicalExaminationoutcome === '' || DiagnosticTests === '' || TobaccoUse === '' || AlcoholConsumption === '' || RecreationalDrugUse === '' || DietaryHabits === '' || ExerciseRoutine === '' || OccupationalHazards === '' || StressLevels === '' || MentalHealth === '' || SleepPatterns === '') {
+            if (name === '' || dob === '' || gender === '' || address === '' || number === '' || email === '' || EmergContName === '' || relation === '' || EmergContNo === '' || occupation === '' || insurance === '' || history === '' || prevmedcond === '' || CurrentMedications === '' || Allergies === '' || PreviousSurgeriesHospitalizations === '' || FamilyMedicalHistory === '' || ReasonforVisit === '' || bloodtype === '' || Symptoms === '' || VitalSigns === '' || Pregnancy === '' || PhysicalExaminationoutcome === '' || DiagnosticTests === '' || TobaccoUse === '' || AlcoholConsumption === '' || RecreationalDrugUse === '' || DietaryHabits === '' || ExerciseRoutine === '' || OccupationalHazards === '' || StressLevels === '' || MentalHealth === '' || SleepPatterns === '' || HealthcareProviders === '' || AdvanceDirectives === '' || Dementia === '' || Alzheimers === '') {
                 alert("Please fill in all fields");
                 return;
             }
 
-            var formData = "Name: " + name + "\nDOB: " + dob + "\nGender: " + gender + "\nAddress: " + address + "\nPhone Number: " + number + "\nEmail:" + email + "\nEmergContName:" + EmergContName + "\nRelation:" + relation + "\nEmergContNo:" + EmergContNo + "\nOccupation:" + occupation + "\nInsurance:" + insurance + "\nPatient History: " + history + "\nPreviousMedicalCondition:" + prevmedcond + "\nCurrentMedications:" + CurrentMedications + "\nAllergies:" + Allergies + "\nPreviousSurgeriesHospitalizations:" + PreviousSurgeriesHospitalizations + "\nFamilyMedicalHistory:" + FamilyMedicalHistory  + "\nReasonforVisit:" + ReasonforVisit + "\nSymptoms:" + Symptoms + "\nbloodtype:" + bloodtype + "\nVitalSigns:" + VitalSigns + "\nPregnancy:" + Pregnancy + "\nPhysicalExaminationoutcome:" + PhysicalExaminationoutcome + "\nDiagnosticTests:" + DiagnosticTests  + "\nTobaccoUse:" + TobaccoUse + "\nAlcoholConsumption:" + AlcoholConsumption + "\nRecreationalDrugUse:" + RecreationalDrugUse + "\nDietaryHabits:" + DietaryHabits + "\nExerciseRoutine:" + ExerciseRoutine + "\nOccupationalHazards:" + OccupationalHazards + "\nStressLevels:"+ StressLevels + "\nMentalHealth:" + MentalHealth + "\nSleepPatterns:" + SleepPatterns;
+            var formData = "Name: " + name + "\nDOB: " + dob + "\nGender: " + gender + "\nAddress: " + address + "\nPhone Number: " + number + "\nEmail:" + email + "\nEmergContName:" + EmergContName + "\nRelation:" + relation + "\nEmergContNo:" + EmergContNo + "\nOccupation:" + occupation + "\nInsurance:" + insurance + "\nPatient History: " + history + "\nPreviousMedicalCondition:" + prevmedcond + "\nCurrentMedications:" + CurrentMedications + "\nAllergies:" + Allergies + "\nPreviousSurgeriesHospitalizations:" + PreviousSurgeriesHospitalizations + "\nFamilyMedicalHistory:" + FamilyMedicalHistory  + "\nReasonforVisit:" + ReasonforVisit + "\nSymptoms:" + Symptoms + "\nbloodtype:" + bloodtype + "\nVitalSigns:" + VitalSigns + "\nPregnancy:" + Pregnancy + "\nPhysicalExaminationoutcome:" + PhysicalExaminationoutcome + "\nDiagnosticTests:" + DiagnosticTests  + "\nTobaccoUse:" + TobaccoUse + "\nAlcoholConsumption:" + AlcoholConsumption + "\nRecreationalDrugUse:" + RecreationalDrugUse + "\nDietaryHabits:" + DietaryHabits + "\nExerciseRoutine:" + ExerciseRoutine + "\nOccupationalHazards:" + OccupationalHazards + "\nStressLevels:"+ StressLevels + "\nMentalHealth:" + MentalHealth + "\nSleepPatterns:" + SleepPatterns + "\nHealthcareProviders:" 
+            + HealthcareProviders + "\nAdvanceDirectives:" + AdvanceDirectives + "\nDementia:" + Dementia + "\nAlzheimers:" + Alzheimers ;
 
             var qrcode = new QRCode(document.getElementById("qrcode"), {
                 text: formData,
