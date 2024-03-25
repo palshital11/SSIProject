@@ -27,60 +27,14 @@
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        
-        .container1 {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .container2 {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .container3 {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .container4 {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .container5 {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+
 
         /* Style the form input fields and labels */
         .container div {
             margin-bottom: 1px;
         }
         
-        .container1 div {
-            margin-bottom: 1px;
-        }
+
 
         .container label {
             display: block;
@@ -88,35 +42,7 @@
             margin-bottom: 5px;
         }
         
-        .container1 label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-        
-        .container2 label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-        
-        .container3 label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-        
-        .container4 label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-        
-        .container5 label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
+
 
         .container input[type="text"],
         .container input[type="tel"],
@@ -128,55 +54,7 @@
             border: 1px solid #ccc;
         }
         
-        .container1 input[type="text"],
-        .container1 input[type="tel"],
-        .container1 input[type="email"],
-        .container1 select {
-            width: 95%;
-            padding: 10px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-        }
-        
-        .container2 input[type="text"],
-        .container2 input[type="tel"],
-        .container2 input[type="email"],
-        .container2 select {
-            width: 95%;
-            padding: 10px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-        }
-        
-        .container3 input[type="text"],
-        .container3 input[type="tel"],
-        .container3 input[type="email"],
-        .container3 select {
-            width: 95%;
-            padding: 10px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-        }
-        
-        .container4 input[type="text"],
-        .container4 input[type="tel"],
-        .container4 input[type="email"],
-        .container4 select {
-            width: 95%;
-            padding: 10px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-        }
-        
-        .container5 input[type="text"],
-        .container5 input[type="tel"],
-        .container5 input[type="email"],
-        .container5 select {
-            width: 95%;
-            padding: 10px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-        }
+
 
         /* Style the buttons */
         
@@ -308,12 +186,12 @@
             var history = document.getElementById("PatientHistory").value;
 
 
-            if (name === '' || dob === '' || gender === '' || address === '' || number === '' || email === '' || EmergContName === '' || relation === '' || EmergContNo === '' || history === '') {
+            if (name === '' || dob === '' || gender === '' || address === '' || number === '' || email === '' || EmergContName === '' || relation === '' || EmergContNo === '' || occupation === '' || insurance === '' || history === '') {
                 alert("Please fill in all fields");
                 return;
             }
 
-            var formData = "Name: " + name + "\nDOB: " + dob + "\nGender: " + gender + "\nAddress: " + address + "\nPhone Number: " + number + "\nEmail:" + email + "\nEmergContName:" + EmergContName + "\nRelation:" + relation + "\nEmergContNo:" + EmergContNo + "\nPatient History: " + history;
+            var formData = "Name: " + name + "\nDOB: " + dob + "\nGender: " + gender + "\nAddress: " + address + "\nPhone Number: " + number + "\nEmail:" + email + "\nEmergContName:" + EmergContName + "\nRelation:" + relation + "\nEmergContNo:" + EmergContNo + "\nOccupation:" + occupation + "\nInsurance:" + insurance + "\nhistory:" + history"\nPatient History: " + history;
 
             var qrcode = new QRCode(document.getElementById("qrcode"), {
                 text: formData,
