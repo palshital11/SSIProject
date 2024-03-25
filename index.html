@@ -28,6 +28,15 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
+        .container1 {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
 
         /* Style the form input fields and labels */
         .container div {
@@ -242,12 +251,12 @@
 
 
 
-            if (name === '' || dob === '' || gender === '' || address === '' || number === '' || email === '' || EmergContName === '' || relation === '' || EmergContNo === '' || occupation === '' || insurance === '' || history === '' || prevmedcond === '' || CurrentMedications === '' || Allergies === '' || PreviousSurgeriesHospitalizations === '' || FamilyMedicalHistory === '' ) {
+            if (name === '' || dob === '' || gender === '' || address === '' || number === '' || email === '' || EmergContName === '' || relation === '' || EmergContNo === '' || occupation === '' || insurance === '' || history === '' || prevmedcond === '' || CurrentMedications === '' || Allergies === '' || PreviousSurgeriesHospitalizations === '' || FamilyMedicalHistory === '') {
                 alert("Please fill in all fields");
                 return;
             }
 
-            var formData = "Name: " + name + "\nDOB: " + dob + "\nGender: " + gender + "\nAddress: " + address + "\nPhone Number: " + number + "\nEmail:" + email + "\nEmergContName:" + EmergContName + "\nRelation:" + relation + "\nEmergContNo:" + EmergContNo + "\nOccupation:" + occupation + "\nInsurance:" + insurance + "\nhistory:" + history"\nPatient History: " + history +"\nPreviousMedicalCondition:" + prevmedcond + "\nCurrentMedications:" + CurrentMedications + "\nAllergies:" + Allergies + "\nPreviousSurgeriesHospitalizations:" + PreviousSurgeriesHospitalizations + "\nFamilyMedicalHistory:" + FamilyMedicalHistory;
+            var formData = "Name: " + name + "\nDOB: " + dob + "\nGender: " + gender + "\nAddress: " + address + "\nPhone Number: " + number + "\nEmail:" + email + "\nEmergContName:" + EmergContName + "\nRelation:" + relation + "\nEmergContNo:" + EmergContNo + "\nOccupation:" + occupation + "\nInsurance:" + insurance + "\nPatient History: " + history + "\nPreviousMedicalCondition:" + prevmedcond + "\nCurrentMedications:" + CurrentMedications + "\nAllergies:" + Allergies + "\nPreviousSurgeriesHospitalizations:" + PreviousSurgeriesHospitalizations + "\nFamilyMedicalHistory:" + FamilyMedicalHistory;
 
             var qrcode = new QRCode(document.getElementById("qrcode"), {
                 text: formData,
