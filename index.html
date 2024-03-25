@@ -20,7 +20,7 @@
 
         /* Style the container for the form and QR code */
         .container {
-            max-width: 600px;
+            max-width: 800px;
             margin: 0 auto;
             background-color: #ffffff;
             padding: 20px;
@@ -29,7 +29,7 @@
         }
 
         .container1 {
-            max-width: 600px;
+            max-width: 800px;
             margin: 0 auto;
             background-color: #ffffff;
             padding: 20px;
@@ -38,7 +38,7 @@
         }
 
         .container2 {
-            max-width: 600px;
+            max-width: 800px;
             margin: 0 auto;
             background-color: #ffffff;
             padding: 20px;
@@ -47,7 +47,16 @@
         }
 
         .container3 {
-            max-width: 600px;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container4 {
+            max-width: 800px;
             margin: 0 auto;
             background-color: #ffffff;
             padding: 20px;
@@ -72,7 +81,10 @@
         .container3 div {
             margin-bottom: 1px;
         }
-        
+
+        .container4 div {
+            margin-bottom: 1px;
+        }
 
 
         .container label {
@@ -94,6 +106,12 @@
         }
 
         .container3 label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .container4 label {
             display: block;
             font-weight: bold;
             margin-bottom: 5px;
@@ -140,13 +158,23 @@
             border-radius: 4px;
             border: 1px solid #ccc;
         }
+
+        .container4 input[type="text"],
+        .container4 input[type="tel"],
+        .container4 input[type="email"],
+        .container4 select {
+            width: 95%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
         
 
 
         /* Style the buttons */
         
         
-        .container3 button {
+        .container4 button {
             padding: 10px 20px;
             background-color: #007BFF;
             color: #ffffff;
@@ -156,7 +184,7 @@
             margin-top: 10px;
         }
 
-        .container3 button:hover {
+        .container4 button:hover {
             background-color: #0056b3;
         }
 
@@ -357,6 +385,29 @@
         <label for="ExerciseRoutine">Exercise Routine:</label>
             <input type="text" id="ExerciseRoutine" placeholder="Frequency, type, and duration of physical activity">
         </div>
+    </div>
+    <div class=container4>
+        <h1>Social and Psychological Factors</h1>
+        
+        <div>
+        <label for="OccupationalHazards">Occupational Hazards:</label>
+            <input type="text" id="OccupationalHazards" placeholder="Exposure to any harmful substances or conditions at work">
+        </div>
+        
+        <div>
+        <label for="StressLevels">Stress Levels:</label>
+            <input type="text" id="StressLevels" placeholder="Any significant stressors in personal or professional life">
+        </div>
+        
+        <div>
+        <label for="MentalHealth">Mental Health:</label>
+            <input type="text" id="MentalHealth" placeholder="Any history of depression, anxiety, or other mental health conditions">
+        </div>
+        
+        <div>
+        <label for="SleepPatterns">Sleep Patterns:</label>
+            <input type="text" id="SleepPatterns" placeholder="Quality and quantity of sleep on a regular basis">
+        </div>
         
         <button onclick="generateQRCode()">Generate QR Code</button>
         <button onclick="downloadQRCode()">Download QR Code</button>
@@ -394,15 +445,19 @@
             var RecreationalDrugUse = document.getElementById("RecreationalDrugUse").value;
             var DietaryHabits = document.getElementById("DietaryHabits").value;
             var ExerciseRoutine = document.getElementById("ExerciseRoutine").value;
+            var OccupationalHazards = document.getElementById("OccupationalHazards").value;
+            var StressLevels = document.getElementById("StressLevels").value;
+            var MentalHealth = document.getElementById("MentalHealth").value;
+            var SleepPatterns = document.getElementById("SleepPatterns").value;
 
 
 
-            if (name === '' || dob === '' || gender === '' || address === '' || number === '' || email === '' || EmergContName === '' || relation === '' || EmergContNo === '' || occupation === '' || insurance === '' || history === '' || prevmedcond === '' || CurrentMedications === '' || Allergies === '' || PreviousSurgeriesHospitalizations === '' || FamilyMedicalHistory === '' || ReasonforVisit === '' || bloodtype === '' || Symptoms === '' || VitalSigns === '' || Pregnancy === '' || PhysicalExaminationoutcome === '' || DiagnosticTests === '' || TobaccoUse === '' || AlcoholConsumption === '' || RecreationalDrugUse === '' || DietaryHabits === '' || ExerciseRoutine === '') {
+            if (name === '' || dob === '' || gender === '' || address === '' || number === '' || email === '' || EmergContName === '' || relation === '' || EmergContNo === '' || occupation === '' || insurance === '' || history === '' || prevmedcond === '' || CurrentMedications === '' || Allergies === '' || PreviousSurgeriesHospitalizations === '' || FamilyMedicalHistory === '' || ReasonforVisit === '' || bloodtype === '' || Symptoms === '' || VitalSigns === '' || Pregnancy === '' || PhysicalExaminationoutcome === '' || DiagnosticTests === '' || TobaccoUse === '' || AlcoholConsumption === '' || RecreationalDrugUse === '' || DietaryHabits === '' || ExerciseRoutine === '' || OccupationalHazards === '' || StressLevels === '' || MentalHealth === '' || SleepPatterns === '') {
                 alert("Please fill in all fields");
                 return;
             }
 
-            var formData = "Name: " + name + "\nDOB: " + dob + "\nGender: " + gender + "\nAddress: " + address + "\nPhone Number: " + number + "\nEmail:" + email + "\nEmergContName:" + EmergContName + "\nRelation:" + relation + "\nEmergContNo:" + EmergContNo + "\nOccupation:" + occupation + "\nInsurance:" + insurance + "\nPatient History: " + history + "\nPreviousMedicalCondition:" + prevmedcond + "\nCurrentMedications:" + CurrentMedications + "\nAllergies:" + Allergies + "\nPreviousSurgeriesHospitalizations:" + PreviousSurgeriesHospitalizations + "\nFamilyMedicalHistory:" + FamilyMedicalHistory  + "\nReasonforVisit:" + ReasonforVisit + "\nSymptoms:" + Symptoms + "\nbloodtype:" + bloodtype + "\nVitalSigns:" + VitalSigns + "\nPregnancy:" + Pregnancy + "\nPhysicalExaminationoutcome:" + PhysicalExaminationoutcome + "\nDiagnosticTests:" + DiagnosticTests  + "\nTobaccoUse:" + TobaccoUse + "\nAlcoholConsumption:" + AlcoholConsumption + "\nRecreationalDrugUse:" + RecreationalDrugUse + "\nDietaryHabits:" + DietaryHabits + "\nExerciseRoutine:" + ExerciseRoutine;
+            var formData = "Name: " + name + "\nDOB: " + dob + "\nGender: " + gender + "\nAddress: " + address + "\nPhone Number: " + number + "\nEmail:" + email + "\nEmergContName:" + EmergContName + "\nRelation:" + relation + "\nEmergContNo:" + EmergContNo + "\nOccupation:" + occupation + "\nInsurance:" + insurance + "\nPatient History: " + history + "\nPreviousMedicalCondition:" + prevmedcond + "\nCurrentMedications:" + CurrentMedications + "\nAllergies:" + Allergies + "\nPreviousSurgeriesHospitalizations:" + PreviousSurgeriesHospitalizations + "\nFamilyMedicalHistory:" + FamilyMedicalHistory  + "\nReasonforVisit:" + ReasonforVisit + "\nSymptoms:" + Symptoms + "\nbloodtype:" + bloodtype + "\nVitalSigns:" + VitalSigns + "\nPregnancy:" + Pregnancy + "\nPhysicalExaminationoutcome:" + PhysicalExaminationoutcome + "\nDiagnosticTests:" + DiagnosticTests  + "\nTobaccoUse:" + TobaccoUse + "\nAlcoholConsumption:" + AlcoholConsumption + "\nRecreationalDrugUse:" + RecreationalDrugUse + "\nDietaryHabits:" + DietaryHabits + "\nExerciseRoutine:" + ExerciseRoutine + "\nOccupationalHazards:" + OccupationalHazards + "\nStressLevels:"+ StressLevels + "\nMentalHealth:" + MentalHealth + "\nSleepPatterns:" + SleepPatterns;
 
             var qrcode = new QRCode(document.getElementById("qrcode"), {
                 text: formData,
