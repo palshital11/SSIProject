@@ -37,6 +37,15 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
+        .container2 {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
 
         /* Style the form input fields and labels */
         .container div {
@@ -44,6 +53,10 @@
         }
 
         .container1 div {
+            margin-bottom: 1px;
+        }
+
+        .container2 div {
             margin-bottom: 1px;
         }
         
@@ -56,6 +69,12 @@
         }
 
         .container1 label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .container2 label {
             display: block;
             font-weight: bold;
             margin-bottom: 5px;
@@ -82,13 +101,23 @@
             border-radius: 4px;
             border: 1px solid #ccc;
         }
+
+        .container2 input[type="text"],
+        .container2 input[type="tel"],
+        .container2 input[type="email"],
+        .container2 select {
+            width: 95%;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
         
 
 
         /* Style the buttons */
         
         
-        .container1 button {
+        .container2 button {
             padding: 10px 20px;
             background-color: #007BFF;
             color: #ffffff;
@@ -98,7 +127,7 @@
             margin-top: 10px;
         }
 
-        .container1 button:hover {
+        .container2 button:hover {
             background-color: #0056b3;
         }
 
@@ -222,7 +251,55 @@
         <div>
         <label for="FamilyMedicalHistory">Family Medical History:</label>
             <input type="text" id="FamilyMedicalHistory" placeholder="Heart disease, cancer, etc.">
-        </div>   
+        </div>
+    </div>    
+        
+        <div class=container2>
+            <h1>Current Health Status</h1>
+            <div>
+        <label for="ReasonforVisit">Reason for Visit:</label>
+            <input type="text" id="ReasonforVisit" placeholder="Current Complications">
+        </div>
+        
+        <div>
+            <label for="bloodtype">Blood Type:</label>
+            <select name="bloodtype" id="bloodtype">
+                <option value="">Please select one…</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+            </select>
+        </div>
+        
+        <div>
+        <label for="Symptoms">Symptoms:</label>
+            <input type="text" id="Symptoms" placeholder="Fever, Vomit, etc">
+        </div>
+        
+        <div>
+        <label for="VitalSigns">Vital Signs:</label>
+            <input type="text" id="VitalSigns" placeholder="Blood pressure, heart rate, temperature, respiratory rate, and blood oxygen saturation.">
+        </div>
+        
+        <div>
+        <label for="Pregnancy">Pregnancy:</label>
+            <input type="text" id="Pregnancy" placeholder="Ongoing or chances">
+        </div>
+        
+        <div>
+        <label for="PhysicalExaminationoutcome">Physical Examination Result:</label>
+            <input type="text" id="PhysicalExaminationoutcome" placeholder="Conclusion from Physical Examination">
+        </div>
+        
+        <div>
+        <label for="DiagnosticTests">Diagnostic Tests:</label>
+            <input type="text" id="DiagnosticTests" placeholder="Blood tests,X-Ray,CT scan, etc.">
+        </div>  
         
         <button onclick="generateQRCode()">Generate QR Code</button>
         <button onclick="downloadQRCode()">Download QR Code</button>
@@ -248,15 +325,22 @@
             var Allergies = document.getElementById("Allergies").value;
             var PreviousSurgeriesHospitalizations = document.getElementById("PreviousSurgeriesHospitalizations").value;
             var FamilyMedicalHistory = document.getElementById("FamilyMedicalHistory").value;
+            var ReasonforVisit = document.getElementById("ReasonforVisit").value;
+            var bloodtype = document.getElementById("bloodtype").value;
+            var Symptoms = document.getElementById("Symptoms").value;
+            var VitalSigns = document.getElementById("VitalSigns").value;
+            var Pregnancy = document.getElementById("Pregnancy").value;
+            var PhysicalExaminationoutcome = document.getElementById("PhysicalExaminationoutcome").value;
+            var DiagnosticTests = document.getElementById("DiagnosticTests").value;
 
 
 
-            if (name === '' || dob === '' || gender === '' || address === '' || number === '' || email === '' || EmergContName === '' || relation === '' || EmergContNo === '' || occupation === '' || insurance === '' || history === '' || prevmedcond === '' || CurrentMedications === '' || Allergies === '' || PreviousSurgeriesHospitalizations === '' || FamilyMedicalHistory === '') {
+            if (name === '' || dob === '' || gender === '' || address === '' || number === '' || email === '' || EmergContName === '' || relation === '' || EmergContNo === '' || occupation === '' || insurance === '' || history === '' || prevmedcond === '' || CurrentMedications === '' || Allergies === '' || PreviousSurgeriesHospitalizations === '' || FamilyMedicalHistory === '' || ReasonforVisit === '' || bloodtype === '' || Symptoms === '' || VitalSigns === '' || Pregnancy === '' || PhysicalExaminationoutcome === '' || DiagnosticTests === '') {
                 alert("Please fill in all fields");
                 return;
             }
 
-            var formData = "Name: " + name + "\nDOB: " + dob + "\nGender: " + gender + "\nAddress: " + address + "\nPhone Number: " + number + "\nEmail:" + email + "\nEmergContName:" + EmergContName + "\nRelation:" + relation + "\nEmergContNo:" + EmergContNo + "\nOccupation:" + occupation + "\nInsurance:" + insurance + "\nPatient History: " + history + "\nPreviousMedicalCondition:" + prevmedcond + "\nCurrentMedications:" + CurrentMedications + "\nAllergies:" + Allergies + "\nPreviousSurgeriesHospitalizations:" + PreviousSurgeriesHospitalizations + "\nFamilyMedicalHistory:" + FamilyMedicalHistory;
+            var formData = "Name: " + name + "\nDOB: " + dob + "\nGender: " + gender + "\nAddress: " + address + "\nPhone Number: " + number + "\nEmail:" + email + "\nEmergContName:" + EmergContName + "\nRelation:" + relation + "\nEmergContNo:" + EmergContNo + "\nOccupation:" + occupation + "\nInsurance:" + insurance + "\nPatient History: " + history + "\nPreviousMedicalCondition:" + prevmedcond + "\nCurrentMedications:" + CurrentMedications + "\nAllergies:" + Allergies + "\nPreviousSurgeriesHospitalizations:" + PreviousSurgeriesHospitalizations + "\nFamilyMedicalHistory:" + FamilyMedicalHistory  + "\nReasonforVisit:" + ReasonforVisit + "\nSymptoms:" + Symptoms + "\nbloodtype:" + bloodtype + "\nVitalSigns:" + VitalSigns + "\nPregnancy:" + Pregnancy + "\nPhysicalExaminationoutcome:" + PhysicalExaminationoutcome + "\nDiagnosticTests:" + DiagnosticTests;
 
             var qrcode = new QRCode(document.getElementById("qrcode"), {
                 text: formData,
