@@ -546,7 +546,7 @@ document.getElementById('searchButton').addEventListener('click', function () {
         searchResultsContainer.innerHTML = '<h2>Search Results</h2>';
         let searchDataObject = JSON.parse(searchData);
         for (let key in searchDataObject) {
-            searchResultsContainer.innerHTML += <p><strong>${key}:</strong> ${searchDataObject[key]}</p>;
+            searchResultsContainer.innerHTML += `<p><strong>${key}:</strong> ${searchDataObject[key]}</p>`;
         }
     } else {
         // If patient ID is not found
