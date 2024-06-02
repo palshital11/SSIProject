@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <img src="https://www.i3indyatechnologies.com/iotchallenge2016/images/VIT.png" width="150" height="45">
+    <img src="https://www.i3indyatechnologies.com/iotchallenge2016/images/VIT.png" width="200" height="60">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QR Code Generator for Form</title>
@@ -10,236 +10,194 @@
     <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
 
     <style>
+    
+        .highlight-red {
+            color: red;
+            font-weight: bold;
+            padding: 0 5px;
+        }
+
+        .highlight-green {
+            color: green;
+            font-weight: bold;
+            padding: 0 5px;
+        }
+    
+        .highlight-blue {
+            color: blue;
+            font-weight: bold;
+            padding: 0 5px;
+        }
+    
         /* Style the body */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #f4f4f4;
+            background-color: #FDF6E4;
         }
 
         /* Style the container for the form and QR code */
-        .container {
+        .container, .container1, .container2, .container3, .container4, .container5, .container6, .container11 {
             max-width: 800px;
-            margin: 0 auto;
+            margin: 0 auto 20px;
             background-color: #ffffff;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        .container1 {
-            max-width: 800px;
-            margin: 0 auto;
+        .container9 {
+            max-width: 750px;
+            margin: 0 auto 20px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid #007BFF; /* Added border */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container10{
+            max-width: 700px;
+            margin: 0 auto 20px;
             background-color: #ffffff;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        .container2 {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        .container8{
+            max-width:300px;
+            margin: 0 auto 20px;
+            background-color:#ffffff;
+            border-radius:100px;
+            border-style:solid;
+            border-color:#ffc107;
         }
 
-        .container3 {
-            max-width: 800px;
-            margin: 0 auto;
+        .container7{
+            max-width:780px;
+            margin:0 auto 20px;
             background-color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius:100px;
+            border-style: solid;
+            border-color:#007BFF;
         }
 
-        .container4 {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        .separator {
+            border: 0;
+            height: 8px; /* Increased height for a more substantial line */
+            background: linear-gradient(to right, #00c6ff, #0072ff); /* Changed gradient color */
+            margin: 40px 0;
+            border-radius: 10px; /* More rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slightly darker shadow */
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .separator::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255,255,255,0.3), rgba(255,255,255,0));
+            transform: translateX(-100%);
+            animation: slide 3s infinite;
+        }
+        
+        @keyframes slide {
+            to {
+                transform: translateX(100%);
+            }
         }
 
-        .container5 {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: #ffffff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        h1 {
+            text-align: center;
+            color: #007BFF;
+            margin-bottom: 20px;
         }
-
 
         /* Style the form input fields and labels */
-        .container div {
-            margin-bottom: 1px;
-        }
-
-        .container1 div {
-            margin-bottom: 1px;
-        }
-
-        .container2 div {
-            margin-bottom: 1px;
-        }
-
-        .container3 div {
-            margin-bottom: 1px;
-        }
-
-        .container4 div {
-            margin-bottom: 1px;
-        }
-
-        .container5 div {
-            margin-bottom: 1px;
-        }
-
-
-        .container label {
+        label {
             display: block;
             font-weight: bold;
             margin-bottom: 5px;
         }
 
-        .container1 label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        .container2 label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        .container3 label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        .container4 label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        .container5 label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-        
-
-
-        .container input[type="text"],
-        .container input[type="tel"],
-        .container input[type="email"],
-        .container select {
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        input[type="date"],
+        select {
             width: 95%;
             padding: 10px;
             border-radius: 4px;
             border: 1px solid #ccc;
+            margin-bottom: 15px;
         }
-
-        .container1 input[type="text"],
-        .container1 input[type="tel"],
-        .container1 input[type="email"],
-        .container1 select {
-            width: 95%;
-            padding: 10px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-        }
-
-        .container2 input[type="text"],
-        .container2 input[type="tel"],
-        .container2 input[type="email"],
-        .container2 select {
-            width: 95%;
-            padding: 10px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-        }
-
-        .container3 input[type="text"],
-        .container3 input[type="tel"],
-        .container3 input[type="email"],
-        .container3 select {
-            width: 95%;
-            padding: 10px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-        }
-
-        .container4 input[type="text"],
-        .container4 input[type="tel"],
-        .container4 input[type="email"],
-        .container4 select {
-            width: 95%;
-            padding: 10px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-        }
-
-        .container5 input[type="text"],
-        .container5 input[type="tel"],
-        .container5 input[type="email"],
-        .container5 select {
-            width: 95%;
-            padding: 10px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-        }
-        
-
 
         /* Style the buttons */
-        
-        
-        .container5 button {
+        button {
             padding: 10px 20px;
             background-color: #007BFF;
             color: #ffffff;
-            border: none;
-            border-radius: 4px;
+            border-radius: 100px;
             cursor: pointer;
-            margin-top: 10px;
+            margin: 20px auto;
+            display: block;
         }
 
-        .container5 button:hover {
+        button:hover {
             background-color: #0056b3;
         }
 
         /* Style the QR code container */
-        #qrcode {
-            margin-top: 20px;
-            text-align: center;
-        }
+    #qrcode {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
 
-        #qrcode canvas {
-            width: 750px;
-            height: 750px;
-            border: 2px solid #007BFF;
-            border-radius: 8px;
-        }
+    #qrcode canvas {
+    max-height: 100%; /* Adjust as needed */
+    max-width: 100%;
+    border: 2px solid #007BFF;
+    border-radius: 8px;
+    }
+
 
         h2 {
-            text-align: center;
+            font-family:"cornerstone" ;
+            text-align: left;
+            color: #000000;
         }
     </style>
+<br>
+<br>
+    <div class="container7">
+        <div>
+          <p style = "font-size: 35px;text-align:center"> SSI Mini Project : Hospital Management System</p>  
+        </div>
+    </div>
+    
+    <div class="container6">
+        <div>
+            <h2><span class="highlight-red">Problem statement</span> : "Develop a product (like a wearable band etc) for senior citizens which will contain all the details about them specifically for individuals who have dementia and Alzheimer's".</h2>
 
-</head>
+    <h2><span class="highlight-green">Solution</span> : Generating a Quick Resopnse code to maintain the details about the senior citcizen which will be printed on the wearable band.</h2>
 
-<body>
-    <h2>Hospital Management System</h2>
-
+    <h2><span class="highlight-blue">Team Name</span> : ETM416</h2>
+        </div>
+    </div>
+    
+    <div class="container8">
+        <div>
+            <p style ="font-size:30px;text-align:center;color:#FF7D29;font-weight:bold">Patient Data</p>
+        </div>
+    </div>
+    
     <div class="container">
         <div>
             <h1>Personal Information</h1>
@@ -264,37 +222,37 @@
             </select>
         </div>
           
-          <div>
+        <div>
             <label for="address">Address:</label>
             <input type="text" id="address" placeholder="Current address">
         </div>
           
-          <div>
+        <div>
             <label for="number">Phone number:</label>
             <input type="tel" id="number" placeholder="Enter phone number">
         </div>
             
-            <div>
+        <div>
             <label for="email">Email:</label>
             <input type="email" id="email" placeholder="Enter your email">
         </div>
               
-             <div>
+        <div>
             <label for="EmergContName">Emergency Contact Name:</label>
             <input type="text" id="EmergContName" placeholder="Care Taker's Name">
         </div>
                
-             <div>
+        <div>
             <label for="relation">Relation:</label>
             <input type="text" id="relation" placeholder="Relation">
         </div>
                
-             <div>
+        <div>
             <label for="EmergContNo">Emergency Contact Number:</label>
             <input type="tel" id="EmergContNo" placeholder="Emergency Contact Number">
         </div>
         
-            <div>
+        <div>
             <label for="occupation">Occupation:</label>
             <input type="text" id="occupation" placeholder="Patient's Occupation">
         </div>
@@ -308,9 +266,8 @@
             <label for="PatientHistory">Patient History:</label>
             <input type="text" id="PatientHistory" placeholder="History">
         </div>
-
     </div>
-    
+
     <div class="container1">
         <h1>Medical History</h1>
         
@@ -325,25 +282,25 @@
         </div>
         
         <div>
-        <label for="Allergies">Allergies:</label>
+            <label for="Allergies">Allergies:</label>
             <input type="text" id="Allergies" placeholder="Allergies">
         </div>
         
         <div>
-        <label for="PreviousSurgeriesHospitalizations">Previous Surgeries or Hospitalizations:</label>
+            <label for="PreviousSurgeriesHospitalizations">Previous Surgeries or Hospitalizations:</label>
             <input type="text" id="PreviousSurgeriesHospitalizations" placeholder="Surgeries">
         </div>
         
         <div>
-        <label for="FamilyMedicalHistory">Family Medical History:</label>
+            <label for="FamilyMedicalHistory">Family Medical History:</label>
             <input type="text" id="FamilyMedicalHistory" placeholder="Heart disease, cancer, etc.">
         </div>
     </div>    
-        
-        <div class=container2>
-            <h1>Current Health Status</h1>
-            <div>
-        <label for="ReasonforVisit">Reason for Visit:</label>
+
+    <div class="container2">
+        <h1>Current Health Status</h1>
+        <div>
+            <label for="ReasonforVisit">Reason for Visit:</label>
             <input type="text" id="ReasonforVisit" placeholder="Current Complications">
         </div>
         
@@ -363,181 +320,244 @@
         </div>
         
         <div>
-        <label for="Symptoms">Symptoms:</label>
+            <label for="Symptoms">Symptoms:</label>
             <input type="text" id="Symptoms" placeholder="Fever, Vomit, etc">
         </div>
         
         <div>
-        <label for="VitalSigns">Vital Signs:</label>
+            <label for="VitalSigns">Vital Signs:</label>
             <input type="text" id="VitalSigns" placeholder="Blood pressure, heart rate, temperature, respiratory rate, and blood oxygen saturation.">
         </div>
         
         <div>
-        <label for="Pregnancy">Pregnancy:</label>
+            <label for="Pregnancy">Pregnancy:</label>
             <input type="text" id="Pregnancy" placeholder="Ongoing or chances">
         </div>
         
         <div>
-        <label for="PhysicalExaminationoutcome">Physical Examination Result:</label>
+            <label for="PhysicalExaminationoutcome">Physical Examination Result:</label>
             <input type="text" id="PhysicalExaminationoutcome" placeholder="Conclusion from Physical Examination">
         </div>
         
         <div>
-        <label for="DiagnosticTests">Diagnostic Tests:</label>
+            <label for="DiagnosticTests">Diagnostic Tests:</label>
             <input type="text" id="DiagnosticTests" placeholder="Blood tests,X-Ray,CT scan, etc.">
         </div>
     </div>
-    <div class=container3>
+    
+    <div class="container3">
         <h1>Lifestyle and Habits</h1>
         
         <div>
-        <label for="TobaccoUse">Tobacco Use:</label>
+            <label for="TobaccoUse">Tobacco Use:</label>
             <input type="text" id="TobaccoUse" placeholder="Smoking or chewing tobacco and the frequency">
         </div>
         
         <div>
-        <label for="AlcoholConsumption">Alcohol Consumption:</label>
+            <label for="AlcoholConsumption">Alcohol Consumption:</label>
             <input type="text" id="AlcoholConsumption" placeholder="Frequency and quantity of alcohol consumption">
         </div>
         
         <div>
-        <label for="RecreationalDrugUse">Recreational Drug Use:</label>
-            <input type="text" id="RecreationalDrugUse" placeholder="Use of any illicit drugs">
+            <label for="RecreationalDrugUse">Recreational Drug Use:</label>
+            <input type="text" id="RecreationalDrugUse" placeholder="Use of recreational drugs">
         </div>
         
         <div>
-        <label for="DietaryHabits">Dietary Habits:</label>
-            <input type="text" id="DietaryHabits" placeholder="Specific dietary restrictions or requirements">
+            <label for="DietaryHabits">Dietary Habits:</label>
+            <input type="text" id="DietaryHabits" placeholder="General diet and nutrition information">
         </div>
         
         <div>
-        <label for="ExerciseRoutine">Exercise Routine:</label>
-            <input type="text" id="ExerciseRoutine" placeholder="Frequency, type, and duration of physical activity">
+            <label for="ExerciseRoutine">Exercise Routine:</label>
+            <input type="text" id="ExerciseRoutine" placeholder="Patient's exercise routine and frequency">
         </div>
     </div>
-    <div class=container4>
+        
+    <div class="container4">
         <h1>Social and Psychological Factors</h1>
         
         <div>
-        <label for="OccupationalHazards">Occupational Hazards:</label>
-            <input type="text" id="OccupationalHazards" placeholder="Exposure to any harmful substances or conditions at work">
+            <label for="OccupationalHazards">Occupational Hazards:</label>
+            <input type="text" id="OccupationalHazards" placeholder="Physical and chemical hazards, etc.">
         </div>
         
         <div>
-        <label for="StressLevels">Stress Levels:</label>
-            <input type="text" id="StressLevels" placeholder="Any significant stressors in personal or professional life">
+            <label for="StressLevels">Stress Levels:</label>
+            <input type="text" id="StressLevels" placeholder="Patient's stress levels and sources of stress">
         </div>
         
         <div>
-        <label for="MentalHealth">Mental Health:</label>
-            <input type="text" id="MentalHealth" placeholder="Any history of depression, anxiety, or other mental health conditions">
+            <label for="MentalHealthHistory">Mental Health History:</label>
+            <input type="text" id="MentalHealthHistory" placeholder="Patient's mental health history and any ongoing conditions">
         </div>
         
         <div>
-        <label for="SleepPatterns">Sleep Patterns:</label>
-            <input type="text" id="SleepPatterns" placeholder="Quality and quantity of sleep on a regular basis">
+            <label for="SleepPatterns">Sleep Patterns:</label>
+            <input type="text" id="SleepPatterns" placeholder="Patient's sleep patterns and any sleep disorders">
         </div>
     </div>
-    
-    <div class=container5>
+
+    <div class="container5">
         <h1>Additional Information</h1>
         
         <div>
-        <label for="HealthcareProviders">Healthcare Providers:</label>
-            <input type="text" id="HealthcareProviders" placeholder="Information about other healthcare providers involved in the patient's care">
+            <label for="HealthcareProviders">Healthcare Providers:</label>
+            <input type="text" id="HealthcareProviders" placeholder="Other healthcare providers involved in the patient's care.">
         </div>
         
         <div>
-        <label for="AdvanceDirectives">Advance Directives:</label>
-            <input type="text" id="AdvanceDirectives" placeholder="If the patient has a living will or healthcare proxy">
+            <label for="AdvanceDirectives">Advance Directives:</label>
+            <input type="text" id="AdvanceDirectives" placeholder="Living will or healthcare proxy.">
         </div>
         
         <div>
-        <label for="Dementia">Dementia:</label>
-            <input type="text" id="Dementia" placeholder="Is the patient suffering from dementia">
+            <label for="SpecificInquiries">Specific Inquiries about Dementia and Alzheimer's:</label>
+            <input type="text" id="SpecificInquiries" placeholder="As applicable.">
         </div>
         
-        <div>
-        <label for="Alzheimers">Alzheimer's:</label>
-            <input type="text" id="Alzheimers" placeholder="Is the patient suffering from Alzheimer's">
-        </div>
-        
-        <button onclick="generateQRCode()">Generate QR Code</button>
-        <button onclick="downloadQRCode()">Download QR Code</button>
-        
-        <div id="qrcode"></div>
+    </div>
 
+    <div>
+            <button id="generate">Generate QR Code</button>
+    </div>
+
+    <div class="container9">
+        <div>
+            <div id="qrcode"></div>
+        </div>
+    </div>
+
+    <div>
+            <button id="download">Download QR Code</button>
+    </div>
+    
+    <div class="container11">
+    <label for="patientID">Patient ID:</label>
+    <span id="patientID"></span>
+    </div>
+    
+    <hr class="separator">
+
+    <div class="container8">
+        <div>
+            <p style ="font-size:30px;text-align:center;color:#FF7D29;font-weight:bold">Search Patient Data</p>
+        </div>
+    </div>
+
+    <div class="container11">
+    <label for="search">Search by Patient ID:</label>
+    <input type="text" id="search" placeholder="Enter Patient ID">
+    <button id="searchButton">Search</button>
+</div>
+
+<div id="searchResultsContainer"></div>
+<div class="container">
+    <div id="searchResults"></div>
+</div>
     <script>
-        function generateQRCode() {
-            var name = document.getElementById("name").value;
-            var dob = document.getElementById("dob").value;
-            var gender = document.getElementById("gender").value;
-            var address = document.getElementById("address").value;
-            var number = document.getElementById("number").value;
-            var email = document.getElementById("email").value;
-            var EmergContName = document.getElementById("EmergContName").value;
-            var relation = document.getElementById("relation").value;
-            var EmergContNo = document.getElementById("EmergContNo").value;
-            var occupation = document.getElementById("occupation").value;
-            var insurance = document.getElementById("insurance").value;
-            var history = document.getElementById("PatientHistory").value;
-            var prevmedcond = document.getElementById("prevmedcond").value;
-            var CurrentMedications = document.getElementById("CurrentMedications").value;
-            var Allergies = document.getElementById("Allergies").value;
-            var PreviousSurgeriesHospitalizations = document.getElementById("PreviousSurgeriesHospitalizations").value;
-            var FamilyMedicalHistory = document.getElementById("FamilyMedicalHistory").value;
-            var ReasonforVisit = document.getElementById("ReasonforVisit").value;
-            var bloodtype = document.getElementById("bloodtype").value;
-            var Symptoms = document.getElementById("Symptoms").value;
-            var VitalSigns = document.getElementById("VitalSigns").value;
-            var Pregnancy = document.getElementById("Pregnancy").value;
-            var PhysicalExaminationoutcome = document.getElementById("PhysicalExaminationoutcome").value;
-            var DiagnosticTests = document.getElementById("DiagnosticTests").value;
-            var TobaccoUse = document.getElementById("TobaccoUse").value;
-            var AlcoholConsumption = document.getElementById("AlcoholConsumption").value;
-            var RecreationalDrugUse = document.getElementById("RecreationalDrugUse").value;
-            var DietaryHabits = document.getElementById("DietaryHabits").value;
-            var ExerciseRoutine = document.getElementById("ExerciseRoutine").value;
-            var OccupationalHazards = document.getElementById("OccupationalHazards").value;
-            var StressLevels = document.getElementById("StressLevels").value;
-            var MentalHealth = document.getElementById("MentalHealth").value;
-            var SleepPatterns = document.getElementById("SleepPatterns").value;
-            var HealthcareProviders = document.getElementById("HealthcareProviders").value;
-            var AdvanceDirectives = document.getElementById("AdvanceDirectives").value;
-            var Dementia = document.getElementById("Dementia").value;
-            var Alzheimers = document.getElementById("Alzheimers").value;
+    
+        function generateID() {
+        let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        let id = '';
+        for (let i = 0; i < 8; i++) {
+            id += characters.charAt(Math.floor(Math.random() * characters.length));
+        }
+        return id;
+    }
 
-
-
-            if (name === '' || dob === '' || gender === '' || address === '' || number === '' || email === '' || EmergContName === '' || relation === '' || EmergContNo === '' || occupation === '' || insurance === '' || history === '' || prevmedcond === '' || CurrentMedications === '' || Allergies === '' || PreviousSurgeriesHospitalizations === '' || FamilyMedicalHistory === '' || ReasonforVisit === '' || bloodtype === '' || Symptoms === '' || VitalSigns === '' || Pregnancy === '' || PhysicalExaminationoutcome === '' || DiagnosticTests === '' || TobaccoUse === '' || AlcoholConsumption === '' || RecreationalDrugUse === '' || DietaryHabits === '' || ExerciseRoutine === '' || OccupationalHazards === '' || StressLevels === '' || MentalHealth === '' || SleepPatterns === '' || HealthcareProviders === '' || AdvanceDirectives === '' || Dementia === '' || Alzheimers === '') {
-                alert("Please fill in all fields");
-                return;
-            }
-
-            var formData = "Name: " + name + "\nDOB: " + dob + "\nGender: " + gender + "\nAddress: " + address + "\nPhone Number: " + number + "\nEmail:" + email + "\nEmergContName:" + EmergContName + "\nRelation:" + relation + "\nEmergContNo:" + EmergContNo + "\nOccupation:" + occupation + "\nInsurance:" + insurance + "\nPatient History: " + history + "\nPreviousMedicalCondition:" + prevmedcond + "\nCurrentMedications:" + CurrentMedications + "\nAllergies:" + Allergies + "\nPreviousSurgeriesHospitalizations:" + PreviousSurgeriesHospitalizations + "\nFamilyMedicalHistory:" + FamilyMedicalHistory  + "\nReasonforVisit:" + ReasonforVisit + "\nSymptoms:" + Symptoms + "\nbloodtype:" + bloodtype + "\nVitalSigns:" + VitalSigns + "\nPregnancy:" + Pregnancy + "\nPhysicalExaminationoutcome:" + PhysicalExaminationoutcome + "\nDiagnosticTests:" + DiagnosticTests  + "\nTobaccoUse:" + TobaccoUse + "\nAlcoholConsumption:" + AlcoholConsumption + "\nRecreationalDrugUse:" + RecreationalDrugUse + "\nDietaryHabits:" + DietaryHabits + "\nExerciseRoutine:" + ExerciseRoutine + "\nOccupationalHazards:" + OccupationalHazards + "\nStressLevels:"+ StressLevels + "\nMentalHealth:" + MentalHealth + "\nSleepPatterns:" + SleepPatterns + "\nHealthcareProviders:" 
-            + HealthcareProviders + "\nAdvanceDirectives:" + AdvanceDirectives + "\nDementia:" + Dementia + "\nAlzheimers:" + Alzheimers ;
-
-            var qrcode = new QRCode(document.getElementById("qrcode"), {
-                text: formData,
+    
+        document.getElementById('generate').addEventListener('click', function () {
+            let formData = {
+                name: document.getElementById('name').value,
+                dob: document.getElementById('dob').value,
+                gender: document.getElementById('gender').value,
+                address: document.getElementById('address').value,
+                number: document.getElementById('number').value,
+                email: document.getElementById('email').value,
+                EmergContName: document.getElementById('EmergContName').value,
+                relation: document.getElementById('relation').value,
+                EmergContNo: document.getElementById('EmergContNo').value,
+                occupation: document.getElementById('occupation').value,
+                insurance: document.getElementById('insurance').value,
+                PatientHistory: document.getElementById('PatientHistory').value,
+                prevmedcond: document.getElementById('prevmedcond').value,
+                CurrentMedications: document.getElementById('CurrentMedications').value,
+                Allergies: document.getElementById('Allergies').value,
+                PreviousSurgeriesHospitalizations: document.getElementById('PreviousSurgeriesHospitalizations').value,
+                FamilyMedicalHistory: document.getElementById('FamilyMedicalHistory').value,
+                ReasonforVisit: document.getElementById('ReasonforVisit').value,
+                bloodtype: document.getElementById('bloodtype').value,
+                Symptoms: document.getElementById('Symptoms').value,
+                VitalSigns: document.getElementById('VitalSigns').value,
+                Pregnancy: document.getElementById('Pregnancy').value,
+                PhysicalExaminationoutcome: document.getElementById('PhysicalExaminationoutcome').value,
+                DiagnosticTests: document.getElementById('DiagnosticTests').value,
+                TobaccoUse: document.getElementById('TobaccoUse').value,
+                AlcoholConsumption: document.getElementById('AlcoholConsumption').value,
+                RecreationalDrugUse: document.getElementById('RecreationalDrugUse').value,
+                DietaryHabits: document.getElementById('DietaryHabits').value,
+                ExerciseRoutine: document.getElementById('ExerciseRoutine').value,
+                OccupationalHazards: document.getElementById('OccupationalHazards').value,
+                StressLevels: document.getElementById('StressLevels').value,
+                MentalHealthHistory: document.getElementById('MentalHealthHistory').value,
+                SleepPatterns: document.getElementById('SleepPatterns').value,
+                HealthcareProviders: document.getElementById('HealthcareProviders').value,
+                AdvanceDirectives: document.getElementById('AdvanceDirectives').value,
+                SpecificInquiries: document.getElementById('SpecificInquiries').value, patientID: generateID()
+            };
+            
+            document.getElementById('patientID').textContent = formData.patientID;
+            
+            localStorage.setItem(formData.patientID, JSON.stringify(formData));
+            
+            let qrCodeContainer = document.getElementById('qrcode');
+            qrCodeContainer.innerHTML = '';
+            
+            let qrcode = new QRCode(qrCodeContainer, {
+                text: JSON.stringify(formData),
                 width: 750,
-                height: 750
+                height: 750,
+                correctLevel: QRCode.CorrectLevel.H
             });
-        }
+        });
 
-        function downloadQRCode() {
-            var canvas = document.querySelector("canvas");
-            var img = canvas.toDataURL("image/png");
+        document.getElementById('download').addEventListener('click', function () {
+            let qrCodeCanvas = document.querySelector('#qrcode canvas');
+            if (qrCodeCanvas) {
+                let link = document.createElement('a');
+                link.href = qrCodeCanvas.toDataURL('image/png');
+                link.download = 'qrcode.png';
+                link.click();
+            }
+        });
 
-            var link = document.createElement("a");
-            link.href = img;
-            link.download = "qrcode.png";
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+	// Function to handle search by patient ID
+document.getElementById('searchButton').addEventListener('click', function () {
+    let searchValue = document.getElementById('search').value;
+    let searchData = localStorage.getItem(searchValue);
+
+    let searchResultsContainer = document.getElementById('searchResults');
+    searchResultsContainer.innerHTML = '';
+
+    if (searchData) {
+        // Display the search results
+        let searchResultsContainer = document.getElementById('searchResults');
+        searchResultsContainer.innerHTML = '<h2>Search Results</h2>';
+        let searchDataObject = JSON.parse(searchData);
+        for (let key in searchDataObject) {
+            searchResultsContainer.innerHTML += <p><strong>${key}:</strong> ${searchDataObject[key]}</p>;
         }
+    } else {
+        // If patient ID is not found
+        let searchResultsContainer = document.getElementById('searchResults');
+        searchResultsContainer.innerHTML = '<p>No patient found with this ID.</p>';
+    }
+});
+
+
+
     </script>
 </body>
 
 </html>
-
-
